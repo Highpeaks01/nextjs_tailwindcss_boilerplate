@@ -40,6 +40,7 @@ export default function AppNavbar () {
           <div className="flex items-center justify-end">
             <Button 
               as={Link}
+              isExternal={true}
               href="https://forms.gle/KhcPLSqJjVxENzEK8"
               className="px-6 py-3 rounded-full bg-gradient-to-bl from-violet-200 to-gray-800"
             >
