@@ -35,7 +35,7 @@ export default function Hero({}){
                     </p>
 
                     <Button className="h-14 rounded-lg bg-green-300 px-6 text-lg font-medium hover:bg-green-400 inline-flex items-center justify-center group transition-transform duration-300">
-                        <Link isExternal href="https://forms.gle/KhcPLSqJjVxENzEK8" className=" text-theme font-medium leading-5 mr-2">
+                        <Link isExternal={true} href="https://forms.gle/KhcPLSqJjVxENzEK8" className=" text-theme font-medium leading-5 mr-2">
                             Get in the loop
                         </Link>
                         <div className="w-[34px] h-[34px] font-bold bg-[#68CC58] rounded-md flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-[3px] group-hover:translate-x-1">
