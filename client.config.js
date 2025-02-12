@@ -1,6 +1,6 @@
 const ClientConfig = {
     appName: "Heave",
-    appHeadline: "AI suite for Real Estate Agents.",
+    appHeadline: "The AI suite for Realtors.",
     appTitle: "Get the king of real estate with a set of superpowers at your fingertips. 💪🚀",
     appDrophead: "",
 
