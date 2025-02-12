@@ -1,10 +1,8 @@
 const ClientConfig = {
     appName: "Heave",
-    appHeadline: "The marketplace for AI agents.",
-    appTitle: "Build Agents on a simple drag 'n drop interface. 💪🚀",
-    appDrophead: "Get a unified API for tools and a simple JSON",
-    appSocialHeadline: "Discover amazing AI characters, share ideas, and be part of the growing community.",
-    
+    appHeadline: "AI suite for Real Estate Agents.",
+    appTitle: "Get the king of real estate with a set of superpowers at your fingertips. 💪🚀",
+    appDrophead: "",
 
     appUrl: "https://app.getheavecom",
     email: "getheave@gmail.com",
