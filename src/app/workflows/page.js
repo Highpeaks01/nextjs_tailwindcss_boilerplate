@@ -5,7 +5,6 @@ import { Button, Card, CardBody, CardFooter, CardHeader, useDisclosure } from "@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaBook, FaCopy, FaPlus, FaTrash } from "react-icons/fa"
-import NewWorkflow from "../../components/Workflows/NewWorkflow"
 import { FaPencil } from "react-icons/fa6"
 
 export default function WorkflowsPage() {
@@ -78,8 +77,6 @@ export default function WorkflowsPage() {
             <p>You have no workflows</p>
           )}
       </div>
-
-      <NewWorkflow newWorkflow={newWorkflow} />
 
     </div>
   )
