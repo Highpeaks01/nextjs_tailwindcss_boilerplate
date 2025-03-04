@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌞 Default Light Mode */
+:root {
+  --color-bg: 255, 255, 255;  /* White */
+  --color-text: 0, 0, 0;      /* Black */
+  --color-primary: 59, 130, 246; /* Blue */
+
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* 🌙 System Dark Mode (Only applies if [data-theme] is NOT set) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: 17, 24, 39;  /* Tailwind bg-gray-900 */
+    --color-text: 255, 255, 255;
+    --color-primary: 147, 197, 253;
+
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 🎨 Manually Set Dark Mode (Overrides prefers-color-scheme) */
+[data-theme="dark"] {
+  --color-bg: 17, 24, 39;
+  --color-text: 255, 255, 255;
+  --color-primary: 147, 197, 253;
+}
+
+/* 🎨 Manually Set Light Mode */
+[data-theme="light"] {
+  --color-bg: 224, 255, 255;
+  --color-text: 0, 0, 0;
+  --color-primary: 59, 130, 246;
+}
+
+/* ✅ Global Styles */
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* ✅ Utility Classes for Tailwind */
+.bg-theme {
+  background-color: rgb(var(--color-bg));
+}
+
+.text-theme {
+  color: rgb(var(--color-text));
+}
+
+.border-theme {
+  border-color: rgb(var(--color-primary));
+}
+
+/* ✅ Typography */
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
