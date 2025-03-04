@@ -7,6 +7,7 @@ import Script from 'next/script';
 import Confetti from 'react-confetti';
 import { Link } from "@heroui/react";
 import { useUser } from '../../providers/UserProvider';
+import ClientConfig from '@/components/client.config';
 
 export default function Success({}) {
   const searchParams = useSearchParams();
@@ -26,7 +27,7 @@ export default function Success({}) {
       console.log("session id:", session_id);
 
       // Fetch session from backend
-      const response = await fetch(`http://localhost:3001/api/v1/subs/get/${session_id}`);
+      const response = await fetch(`${ClientConfig.sessions_get}${session_id}`);
       const sessionData = await response.json();
 
       console.log('Subscription successful', sessionData);
