@@ -9,21 +9,21 @@ const ClientConfig = {
 
     //API ENDPOINTS
     //Server
-    server_info: "http://localhost:3001/api/v1/server-info",
+    server_info: "https://backend.callvize.com/api/v1/server-info",
 
     //Live call
-    call_audio: "http://localhost:3001/api/v1/call/audio",
+    call_audio: "https://backend.callvize.com/api/v1/call/audio",
 
     //Users
-    users_add: "http://localhost:3001/api/v1/users/add",
-    users_get: "http://localhost:3001/api/v1/users/get",
+    users_add: "https://backend.callvize.com/api/v1/users/add",
+    users_get: "https://backend.callvize.com/api/v1/users/get",
 
     //Calls
-    calls_add: "http://localhost:3001/api/v1/calls/add",
-    calls_edit: "http://localhost:3001/api/v1/calls/edit",
-    calls_get: "http://localhost:3001/api/v1/calls/get",
-    calls_delete: "http://localhost:3001/api/v1/calls/delete",
-    calls_duplicate: "http://localhost:3001/api/v1/calls/duplicate",
+    calls_add: "https://backend.callvize.com/api/v1/calls/add",
+    calls_edit: "https://backend.callvize.com/api/v1/calls/edit",
+    calls_get: "https://backend.callvize.com/api/v1/calls/get",
+    calls_delete: "https://backend.callvize.com/api/v1/calls/delete",
+    calls_duplicate: "https://backend.callvize.com/api/v1/calls/duplicate",
 
     //Misc
     motivationalSamples: [
