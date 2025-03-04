@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import Confetti from 'react-confetti';
 import { Link } from "@heroui/react";
-import { useUser } from '../../../providers/UserProvider';
+import { useUser } from '../../providers/UserProvider';
 
 export default function Success({}) {
   const searchParams = useSearchParams();
