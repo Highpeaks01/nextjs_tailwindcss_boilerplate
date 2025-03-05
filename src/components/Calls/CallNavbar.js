@@ -174,7 +174,7 @@ export default function CallNavbar({
                             <PopoverTip message={"If on, set the pause duration before getting a hint. If disabled, get the hints at specified intervals."} />
                         </div>
                         <div className="flex flex-col gap-2 w-full h-full max-w-md items-start justify-center">
-                            <div>
+                            <div className="flex flex-col w-full">
                                 <Slider
                                 aria-label="Volume"
                                 className="max-w-md"
@@ -208,7 +208,7 @@ export default function CallNavbar({
                                 />
                                 <p className="text-theme font-medium text-md">Current interval: {interval}</p>
                             </div>
-                            <div>
+                            <div className="flex flex-col w-full">
                                 <Slider
                                 aria-label="Silence duration"
                                 className="max-w-md"
