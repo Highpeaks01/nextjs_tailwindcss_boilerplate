@@ -83,7 +83,7 @@ import { ContainerWithChildren } from "postcss/lib/container";
                   <Input
                   isRequired
                   className="w-full"
-                  variant={"bordered"}
+                  variant={"faded"}
                   placeholder="Something easily searchable and recognizable"
                   value={title} 
                   onValueChange={setTitle}
@@ -97,7 +97,7 @@ import { ContainerWithChildren } from "postcss/lib/container";
                   isInvalid={message.type == "callContextError"}
                   label="Notes"
                   placeholder="Useful knowledge about the topic of the call. Pieces of information about participants, any preferences of yours."
-                  variant="underlined"
+                  variant="faded"
                   value={context}
                   onValueChange={setContext}
                   />
