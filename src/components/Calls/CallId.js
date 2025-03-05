@@ -67,12 +67,14 @@ export default function CallId({
             oldCall.current = call
             setTitle(call.title)
             setContext(call.context)
+            
             setSource(new Set([call.source]))
-            setLlm(new Set([call.llm]))
-            setAutoInterval(call.auto_interval)
-            setInterval(new Set([call.recording_interval]))
-            setSilence(new Set([call.silence_interval]))
+            setLlm(new Set([call.llm]))            
             setRole(new Set([call.role]))
+
+            setAutoInterval(call.auto_interval)
+            setInterval(call.recording_interval)
+            setSilence(call.silence_interval)
             setPublic(call.privacy == "public")
 
             setMessages(messages)
