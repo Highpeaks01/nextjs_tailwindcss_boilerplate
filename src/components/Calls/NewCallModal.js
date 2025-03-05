@@ -35,23 +35,19 @@ import { ContainerWithChildren } from "postcss/lib/container";
 
         setMessage({ type: "callCreationLoading", msg: "Creating Call"})
 
-        const formData = new FormData();
-        formData.append("user_id", userData.uid)
-        formData.append("owner_id", userData.public_id)
-        formData.append("title", title);
-        formData.append("context", context);
-        formData.append("privacy", isPublic ? "public" : "private");
-    
-        /*knowledge.forEach((fileObj) => {
-          formData.append("files", fileObj.file);
-        });*/
-
         const response = await fetch(ClientConfig.calls_add, {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${await handleGetIdToken()}`
+                "Authorization": `Bearer ${await handleGetIdToken()}`,
+                "Content-Type": "application/json",
             },
-            body: formData
+            body: JSON.stringify({
+              user_id: userData.uid,
+              owner_id: userData.public_id,
+              title,
+              context,
+              privacy: isPublic ? "public" : "private", 
+            })
         })
         
         if (!response.ok) {
