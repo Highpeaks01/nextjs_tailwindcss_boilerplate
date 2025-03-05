@@ -63,6 +63,7 @@ export default function CallId({
             const data = await response.json()
             const call = data.calls[0]
             const messages = data.messages
+            console.log(call)
             oldCall.current = call
             setTitle(call.title)
             setContext(call.context)
@@ -118,7 +119,11 @@ export default function CallId({
                 >
                     Options
                 </Button>
-                <Modal isOpen={optionsModal.isOpen} onOpenChange={optionsModal.onOpenChange}>
+                <Modal 
+                isOpen={optionsModal.isOpen} 
+                onOpenChange={optionsModal.onOpenChange}
+                size={"4xl"}
+                >
                     <ModalContent>
                     {(onClose) => (
                         <>

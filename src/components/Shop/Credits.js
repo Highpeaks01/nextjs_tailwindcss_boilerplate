@@ -19,7 +19,7 @@ export default function Credits({}){
                 </div>
                     <Button
                     className="text-base px-4 py-3 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-r-xl"
-                    startContent={<p>{userData?.subscription.plan == "free" ? "Upgrade" : userData?.subscription.plan}</p>}
+                    startContent={<p>{userData?.subscription?.plan == "free" ? "Upgrade" : userData?.subscription.plan}</p>}
                     onPress={() => shopModal.onOpen()}
                 />                
             </div>
