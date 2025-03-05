@@ -217,8 +217,8 @@ export default function CallNavbar({
                                 className="max-w-md"
                                 isDisabled={silence}
                                 color="success"
-                                maxValue={1}
-                                minValue={5}
+                                maxValue={5}
+                                minValue={1}
                                 step={1}
                                 endContent={
                                 <Button
