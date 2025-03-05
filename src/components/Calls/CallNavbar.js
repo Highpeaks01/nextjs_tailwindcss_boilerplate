@@ -285,7 +285,7 @@ export default function CallNavbar({
                                 </SelectItem>
                             ))}
                         </Select>
-                        <PopoverTip message={"These are \"the brain\" that gives you the hints."} />
+                        <PopoverTip message={"These are \"the brain\" that provide you with the hints."} />
                     </div>
                     <div className="w-full">
                         <p className="text-theme">Audio source</p>
