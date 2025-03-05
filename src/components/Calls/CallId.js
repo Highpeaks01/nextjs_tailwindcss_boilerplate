@@ -23,6 +23,8 @@ export default function CallId({
     //Interval
     const [interval, setInterval] = useState(20);
     const [autoInterval, setAutoInterval] = useState(true);
+    //Silence interval
+    const [silence, setSilence] = useState(1);
     //Source
     const [source, setSource] = useState(new Set(["both"]));
     const [llm, setLlm] = useState(new Set(["claude"]))
@@ -94,6 +96,7 @@ export default function CallId({
                 source={source} 
                 interval={interval}
                 autoInterval={autoInterval}
+                silence={silence}
                 context={context}
                 llm={llm}
                 role={role}
@@ -122,6 +125,8 @@ export default function CallId({
                                 setInterval={setInterval}
                                 autoInterval={autoInterval}
                                 setAutoInterval={setAutoInterval} 
+                                silence={silence}
+                                setSilence={setSilence}
                                 title={title}
                                 setTitle={setTitle}
                                 context={context}

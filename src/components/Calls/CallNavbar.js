@@ -20,7 +20,7 @@ import {
 } from "@heroui/react";
 import ClientConfig from "@/components/client.config";
 import { useEffect, useRef, useState } from "react";
-import { FaLock, FaLockOpen, FaRegClock } from "react-icons/fa";
+import { FaLock, FaLockOpen, FaMinus, FaPlus, FaRegClock } from "react-icons/fa";
 import { FiChevronsDown } from "react-icons/fi";
 import { FaBolt } from "react-icons/fa6";
 import { useUser } from "../../providers/UserProvider";
@@ -35,6 +35,8 @@ export default function CallNavbar({
     setInterval,
     autoInterval,
     setAutoInterval,
+    silence,
+    setSilence,
     isPublic,
     setPublic,
     context,    
@@ -172,7 +174,7 @@ export default function CallNavbar({
                         </div>
                         <div className="flex flex-col gap-2 w-full h-full max-w-md items-start justify-center">
                             
-                            {!autoInterval && (
+                            {!autoInterval ? (
                                 <>
                                     <Slider
                                     aria-label="Volume"
@@ -208,6 +210,42 @@ export default function CallNavbar({
                                     />
                                     <p className="text-theme font-medium text-md">Current interval: {interval}</p>
                                 </>
+                            ) : (
+                                <>
+                                <Slider
+                                aria-label="Silence duration"
+                                className="max-w-md"
+                                isDisabled={silence}
+                                color="success"
+                                maxValue={1}
+                                minValue={5}
+                                step={1}
+                                endContent={
+                                <Button
+                                    isIconOnly
+                                    radius="full"
+                                    variant="light"
+                                    onPress={() => setSilence((prev) => (prev <= 4 ? prev + 1 : 5))}
+                                >
+                                    <FaPlus className="text-2xl" />
+                                </Button>
+                                }
+                                size="lg"
+                                startContent={
+                                <Button
+                                    isIconOnly
+                                    radius="full"
+                                    variant="light"
+                                    onPress={() => setSilence((prev) => (prev >= 2 ? prev - 1 : 1))}
+                                >
+                                    <FaMinus className="text-2xl" />
+                                </Button>
+                                }
+                                value={silence}
+                                onChange={setSilence}
+                                />
+                                <p className="text-theme font-medium text-md">Current silence duration: {silence}</p>
+                            </>
                             )}
                         </div>  
                     </div>

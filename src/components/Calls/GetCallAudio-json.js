@@ -13,7 +13,6 @@ export default function GetCallAudio({
   source,
   interval,
   autoInterval,
-  silence,
   llm,
   role,
   context,
@@ -120,7 +119,7 @@ export default function GetCallAudio({
         silenceTimeoutRef.current = setTimeout(() => {
           console.log("🛑 Stopping recording due to silence...");
           stopRecording(true);
-        }, silence);
+        }, 3000);
       }
     } else {
       if (silenceTimeoutRef.current) {
@@ -196,6 +195,7 @@ export default function GetCallAudio({
           'Authorization': `Bearer ${await handleGetIdToken()}`,
           },
         body: formData,
+        credentials: 'include',  // Ensure cookies or credentials are sent
       });
       
       const data = await response.json();
