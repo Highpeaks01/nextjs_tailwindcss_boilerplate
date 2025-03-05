@@ -33,7 +33,7 @@ export default function CallMessages ({ messages, status }) {
         message={message} 
         />
       ))}
-      <p className="py-4 font-semibold italic text-md">{status}</p>
+      <p className="py-4 animate-bounce font-semibold italic text-md">{status}</p>
       {/* Latest message ref to scroll to the right place */}
       <div className={messages.length === 0 ? "h-2" : ""} ref={latestMessageRef}></div>
     </div>
