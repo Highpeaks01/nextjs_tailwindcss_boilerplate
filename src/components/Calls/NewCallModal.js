@@ -42,9 +42,9 @@ import { ContainerWithChildren } from "postcss/lib/container";
         formData.append("context", context);
         formData.append("privacy", isPublic ? "public" : "private");
     
-        knowledge.forEach((fileObj) => {
+        /*knowledge.forEach((fileObj) => {
           formData.append("files", fileObj.file);
-        });
+        });*/
 
         const response = await fetch(ClientConfig.calls_add, {
             method: "POST",
