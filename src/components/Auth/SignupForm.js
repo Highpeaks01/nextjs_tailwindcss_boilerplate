@@ -196,9 +196,9 @@ export default function SignupForm ({}) {
   return (
     <>
       <div className="w-full">
-          <div className="flex flex-col w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
+          <div className="flex flex-col gap-4 w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
             <Input 
-            variant={"underlined"}
+            variant={"faded"}
             isRequired
             type="email" 
             isClearable={true}
@@ -209,11 +209,11 @@ export default function SignupForm ({}) {
             isInvalid={message.type == "signupEmailError"}
             errorMessage={message.type == "signupEmailError" && message.msg}
             size={"lg"}
-            className={"text-theme text-base"}
+            className={"text-sky-500 bg-theme"}
             />
         
             <Input
-            variant={"underlined"}
+            variant={"faded"}
             isRequired
             label="Password"
             endContent={
@@ -231,24 +231,24 @@ export default function SignupForm ({}) {
             isInvalid={message.type == "signupPasswordError"}
             errorMessage={message.type == "signupPasswordError" && message.msg} 
             size={"lg"}
-            className={"text-theme text-base"}
+            className={"text-sky-500 bg-theme"}
             />
 
             <Input 
-            variant={"underlined"}
+            variant={"faded"}
             label="Company" 
             value={company}
             onValueChange={setCompany}
             size={"lg"}
-            className={"text-theme text-base"}
+            className={"text-sky-500 bg-theme"}
             />
 
             <Select
-            className="text-theme py-2"
+            className="text-sky-500 py-2"
             label="Role"
             placeholder="Select a role"
             selectedKeys={role}
-            variant="underlined"
+            variant="faded"
             isRequired
             onSelectionChange={setRole}
             >
@@ -258,11 +258,11 @@ export default function SignupForm ({}) {
             </Select>
 
             <Select
-            className="text-theme"
+            className="text-sky-500 py-2"
             label="From"
             placeholder="How did you hear about us?"
             selectedKeys={from}
-            variant="underlined"
+            variant="faded"
             isRequired
             onSelectionChange={setFrom}
             >

@@ -57,9 +57,9 @@ export default function LoginForm ({}) {
   return (
     <>
         <div className="w-full">
-            <div className="flex flex-col w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
+            <div className="flex flex-col gap-4 w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
                 <Input 
-                    variant={"underlined"}
+                    variant={"faded"}
                     isRequired
                     type="email" 
                     isClearable
@@ -70,12 +70,12 @@ export default function LoginForm ({}) {
                     isInvalid={message.type == "loginEmailError"}
                     errorMessage={message.type == "loginEmailError" && message.msg} 
                     size={"md"}
-                    className={"text-theme text-base"}
+                    className={"text-sky-500 text-base"}
                 />
 
                 <Input
                     isRequired
-                    variant={"underlined"}
+                    variant={"faded"}
                     label="Password"
                     endContent={
                         <button type="button" onClick={toggleVisibility}>
@@ -95,7 +95,7 @@ export default function LoginForm ({}) {
                     errorMessage={message.type == "loginPasswordError" && message.msg} 
 
                     size={"md"}
-                    className={"text-theme text-base"}
+                    className={"text-sky-500 text-base"}
                 />
 
                 <div className={"mb-6 flex w-full items-end justify-end"}>
