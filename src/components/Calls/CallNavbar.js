@@ -62,6 +62,20 @@ export default function CallNavbar({
 
         try {
 
+            const formData = new FormData()
+
+            formData.append("user_id", userData.uid)
+            formData.append("public_id", userData.public_id)
+            formData.append("call_id", callId)
+            formData.append("title", title)
+            formData.append("context", context)
+            formData.append("llm", llm.values().next().value)
+            formData.append("role", role.values().next().value)
+            formData.append("auto_interval", autoInterval)
+            formData.append("interval", interval)
+            formData.append("source", source.values().next().value)
+            formData.append("privacy", isPublic ? "public" : "private")
+
             const callData = {
                 user_id: userData.uid,
                 public_id: userData.public_id,
@@ -80,9 +94,8 @@ export default function CallNavbar({
                 method: 'POST',
                 headers: {
                 'Authorization': `Bearer ${await handleGetIdToken()}`,
-                "Content-Type": "application/json",
                 },
-                body: JSON.stringify(callData),
+                body: formData,
             })
     
             if (response.ok) {
