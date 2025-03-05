@@ -3,7 +3,7 @@ import { LuAudioLines } from "react-icons/lu"
 import { MdSpatialAudioOff } from "react-icons/md"
 
 const ClientConfig = {
-    
+
     appHeadline: "Your mentor on the line.",
     appTitle: "Reach your goal faster with real-time hints and insights.",
     appDrophead: "",
@@ -116,14 +116,14 @@ const ClientConfig = {
     appName: "Callvize",
 
     //Payments
-    _stripePublic: "pk_live_51QyUaaGvBrN14sckgeKdfJbnghzA1ni7LXWcreM6ZwsJoA2PTCuoyWZQo2Fqv5IUgHrJNdm91u0SKu8z4sMkGkTJ001oTgv9tj",
-    stripePublic:"pk_test_51Qyd202fOUy6akPbOBdPZjXdhHoNNr8F91pqwgJGAFTlR6yOMSGXZi806lQL0vVgyWn3eRhyjcmfNps9Miq4hSEp00A7x0I5e5",
+    stripePublic: "pk_live_51QyUaaGvBrN14sckgeKdfJbnghzA1ni7LXWcreM6ZwsJoA2PTCuoyWZQo2Fqv5IUgHrJNdm91u0SKu8z4sMkGkTJ001oTgv9tj",
+    stripePublicTest:"pk_test_51Qyd202fOUy6akPbOBdPZjXdhHoNNr8F91pqwgJGAFTlR6yOMSGXZi806lQL0vVgyWn3eRhyjcmfNps9Miq4hSEp00A7x0I5e5",
 
     //Products
     stripeProducts: [
         {
-            _stripeId: "price_1QycUKGvBrN14sckTrC032Oi",
-            stripeId: "price_1Qyd4B2fOUy6akPbgbZHt67V",
+            stripeId: "price_1QycUKGvBrN14sckTrC032Oi",
+            stripeIdTest: "price_1Qyd4B2fOUy6akPbgbZHt67V",
             id: "starter",
             price: 7.99,
             hints: 500,
@@ -132,8 +132,8 @@ const ClientConfig = {
             description: "Ideal for occasional callers"
         },
         {
-            _stripeId: "price_1QycV3GvBrN14sckYpxJHBwZ",
-            stripeId: "price_1Qyd4Z2fOUy6akPbg1G2UzA0",
+            stripeId: "price_1QycV3GvBrN14sckYpxJHBwZ",
+            stripeIdTest: "price_1Qyd4Z2fOUy6akPbg1G2UzA0",
             id: "pro",
             price: 17.99,
             hints: 2000,

@@ -63,7 +63,7 @@ export default function CallId({
             const data = await response.json()
             const call = data.calls[0]
             const messages = data.messages
-            console.log(call)
+            
             oldCall.current = call
             setTitle(call.title)
             setContext(call.context)
