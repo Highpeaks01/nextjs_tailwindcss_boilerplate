@@ -47,7 +47,7 @@ export default function SignupForm ({}) {
 
   //____________________________________________________________________________________________//
 
-  const { handleVerify, handleSendVerificationEmail, handleGetIdToken, handleCheckEmail, handleGoogleLogin, message, setMessage } = useUser()
+  const { handleVerify, setUser, setUserData, handleSendVerificationEmail, handleGetIdToken, handleCheckEmail, handleGoogleLogin, message, setMessage } = useUser()
 
   //Signup
   const [signupEmail, setSignupEmail] = useState('')
@@ -118,7 +118,7 @@ export default function SignupForm ({}) {
         })*/
 
         const data = await response.json()
-        setUserId(user)
+        setUser(user)
         setUserData(data)
 
         //Send verification email
@@ -299,7 +299,7 @@ export default function SignupForm ({}) {
             <div className="flex text-center justify-center h-5">
               {message.type == "signupMessage" && (
                 <p className="md:text-sm text-base text-blue-400 font-medium">{message.msg}</p>
-              )}s
+              )}
             </div>
             <Button      
               variant="solid"                                    
