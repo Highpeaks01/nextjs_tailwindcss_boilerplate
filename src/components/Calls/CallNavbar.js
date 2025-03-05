@@ -216,7 +216,7 @@ export default function CallNavbar({
                                 <Slider
                                 aria-label="Silence duration"
                                 className="max-w-md"
-                                isDisabled={silence}
+                                isDisabled={!autoInterval}
                                 color="success"
                                 maxValue={5}
                                 minValue={1}

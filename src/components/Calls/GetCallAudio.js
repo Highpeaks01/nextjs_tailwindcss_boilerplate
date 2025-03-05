@@ -107,7 +107,7 @@ export default function GetCallAudio({
       intervalIdRef.current = setInterval(() => {
         console.log("⏳ Interval reached, stopping recording...");
         stopRecording(true); // Pass `true` to ensure it restarts
-      }, interval * 1000);
+      }, (parseInt(interval) * 1000));
     }
 
     setIsCapturing(true);
@@ -120,7 +120,7 @@ export default function GetCallAudio({
         silenceTimeoutRef.current = setTimeout(() => {
           console.log("🛑 Stopping recording due to silence...");
           stopRecording(true);
-        }, silence * 1000);
+        }, (parseInt(silence) * 1000));
       }
     } else {
       if (silenceTimeoutRef.current) {
