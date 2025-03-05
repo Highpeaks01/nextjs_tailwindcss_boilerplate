@@ -170,7 +170,7 @@ export default function CallNavbar({
                             >
                                 <p className="text-theme">Auto detect pauses</p>
                             </Checkbox>
-                            <PopoverTip message={"Get the hint everytime a pause longer than 3s is detected. If disabled, get the hints at specified intervals."} />
+                            <PopoverTip message={"If on, set the pause duration before getting a hint. If disabled, get the hints at specified intervals."} />
                         </div>
                         <div className="flex flex-col gap-2 w-full h-full max-w-md items-start justify-center">
                             
