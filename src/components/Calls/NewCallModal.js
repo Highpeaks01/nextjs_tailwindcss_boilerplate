@@ -71,7 +71,7 @@ import { ContainerWithChildren } from "postcss/lib/container";
         <Modal 
         isOpen={newCallModal.isOpen} 
         onOpenChange={newCallModal.onOpenChange}
-        size="xl"
+        size="3xl"
         className="bg-theme text-theme"
         >
           <ModalContent className="flex flex-col w-full">
