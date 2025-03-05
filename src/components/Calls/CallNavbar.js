@@ -62,7 +62,7 @@ export default function CallNavbar({
 
         try {
 
-            const formData = new FormData()
+            /*const formData = new FormData()
 
             formData.append("user_id", userData.uid)
             formData.append("public_id", userData.public_id)
@@ -74,7 +74,7 @@ export default function CallNavbar({
             formData.append("auto_interval", autoInterval)
             formData.append("interval", interval)
             formData.append("source", source.values().next().value)
-            formData.append("privacy", isPublic ? "public" : "private")
+            formData.append("privacy", isPublic ? "public" : "private")*/
 
             const callData = {
                 user_id: userData.uid,
@@ -93,9 +93,10 @@ export default function CallNavbar({
             const response = await fetch(ClientConfig.calls_edit, {
                 method: 'POST',
                 headers: {
-                'Authorization': `Bearer ${await handleGetIdToken()}`,
+                    'Authorization': `Bearer ${await handleGetIdToken()}`,
+                    'Content-Type': 'application/json',
                 },
-                body: formData,
+                body: JSON.stringify(callData),
             })
     
             if (response.ok) {
