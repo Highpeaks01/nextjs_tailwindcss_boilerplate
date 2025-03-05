@@ -66,8 +66,16 @@ export default function CallId({
             oldCall.current = call
             setTitle(call.title)
             setContext(call.context)
-            setKnowledge(call.knowledge)
+            setSource(new Set([call.source]))
+            setLlm(new Set([call.llm]))
+            setAutoInterval(call.auto_interval)
+            setInterval(new Set([call.recording_interval]))
+            setSilence(new Set([call.silence_interval]))
+            setRole(new Set([call.role]))
+            setPublic(call.privacy == "public")
+
             setMessages(messages)
+
         } else {
             setMessage({ type: "callFetchingError", msg: "Error fetching call"})
         }
