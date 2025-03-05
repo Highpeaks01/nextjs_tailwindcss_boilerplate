@@ -120,7 +120,7 @@ export default function GetCallAudio({
         silenceTimeoutRef.current = setTimeout(() => {
           console.log("🛑 Stopping recording due to silence...");
           stopRecording(true);
-        }, silence);
+        }, silence * 1000);
       }
     } else {
       if (silenceTimeoutRef.current) {
