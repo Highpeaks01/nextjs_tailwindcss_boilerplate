@@ -158,7 +158,7 @@ export default function CallNavbar({
                 value={context}
                 onValueChange={setContext}
                 />
-                <div className="flex flex-col items-center justify-center gap-4 my-4 w-full">
+                <div className="grid grid-cols-2 items-center justify-center gap-4 my-4 w-full">
                     <div className="flex flex-col gap-2 w-full">
                         <div className="flex">
                             <Checkbox
@@ -180,7 +180,6 @@ export default function CallNavbar({
                                     <Slider
                                     aria-label="Volume"
                                     className="max-w-md"
-                                    isDisabled={autoInterval}
                                     color="success"
                                     maxValue={60}
                                     minValue={20}
@@ -216,7 +215,6 @@ export default function CallNavbar({
                                 <Slider
                                 aria-label="Silence duration"
                                 className="max-w-md"
-                                isDisabled={!autoInterval}
                                 color="success"
                                 maxValue={5}
                                 minValue={1}
