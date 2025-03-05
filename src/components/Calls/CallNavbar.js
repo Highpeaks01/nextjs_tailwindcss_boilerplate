@@ -174,44 +174,41 @@ export default function CallNavbar({
                             <PopoverTip message={"If on, set the pause duration before getting a hint. If disabled, get the hints at specified intervals."} />
                         </div>
                         <div className="flex flex-col gap-2 w-full h-full max-w-md items-start justify-center">
-                            
-                            {!autoInterval ? (
-                                <>
-                                    <Slider
-                                    aria-label="Volume"
-                                    className="max-w-md"
-                                    color="success"
-                                    maxValue={60}
-                                    minValue={20}
-                                    step={5}
-                                    endContent={
-                                    <Button
-                                        isIconOnly
-                                        radius="full"
-                                        variant="light"
-                                        onPress={() => setInterval((prev) => (prev <= 55 ? prev + 5 : 60))}
-                                    >
-                                        <FaRegClock className="text-2xl" />
-                                    </Button>
-                                    }
-                                    size="lg"
-                                    startContent={
-                                    <Button
-                                        isIconOnly
-                                        radius="full"
-                                        variant="light"
-                                        onPress={() => setInterval((prev) => (prev >= 25 ? prev - 5 : 20))}
-                                    >
-                                        <FaBolt className="text-2xl" />
-                                    </Button>
-                                    }
-                                    value={interval}
-                                    onChange={setInterval}
-                                    />
-                                    <p className="text-theme font-medium text-md">Current interval: {interval}</p>
-                                </>
-                            ) : (
-                                <>
+                            <div>
+                                <Slider
+                                aria-label="Volume"
+                                className="max-w-md"
+                                color="success"
+                                maxValue={60}
+                                minValue={20}
+                                step={5}
+                                endContent={
+                                <Button
+                                    isIconOnly
+                                    radius="full"
+                                    variant="light"
+                                    onPress={() => setInterval((prev) => (prev <= 55 ? prev + 5 : 60))}
+                                >
+                                    <FaRegClock className="text-2xl" />
+                                </Button>
+                                }
+                                size="lg"
+                                startContent={
+                                <Button
+                                    isIconOnly
+                                    radius="full"
+                                    variant="light"
+                                    onPress={() => setInterval((prev) => (prev >= 25 ? prev - 5 : 20))}
+                                >
+                                    <FaBolt className="text-2xl" />
+                                </Button>
+                                }
+                                value={interval}
+                                onChange={setInterval}
+                                />
+                                <p className="text-theme font-medium text-md">Current interval: {interval}</p>
+                            </div>
+                            <div>
                                 <Slider
                                 aria-label="Silence duration"
                                 className="max-w-md"
@@ -244,8 +241,7 @@ export default function CallNavbar({
                                 onChange={setSilence}
                                 />
                                 <p className="text-theme font-medium text-md">Current silence duration: {silence}</p>
-                            </>
-                            )}
+                            </div>
                         </div>  
                     </div>
                     <div className="w-full">
