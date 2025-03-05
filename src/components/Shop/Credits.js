@@ -14,7 +14,7 @@ export default function Credits({}){
             <div className="flex gap-2 border border-1 border-theme rounded-xl">
                 <div className={`flex font-base font-semibold ${userData?.credits < 10 ? "text-red-400 animate-pulse" : "text-theme" } gap-1 items-center pl-2`}>
                     <IoIosTimer size={20} />
-                    {userData?.credits || 100}
+                    {userData?.credits}
                     <p className="font-light text-sm">hints</p>
                 </div>
                     <Button
