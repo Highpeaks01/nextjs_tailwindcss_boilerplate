@@ -52,7 +52,7 @@ export default function CallNavbar({
     
     //___________________________________________________________//
 
-    const handleCallUpdate = async () => {
+    const handleEditCall = async () => {
 
         if(!title){
           return setMessage({ type: "callTitleError", msg: "Please enter a title."})
@@ -62,21 +62,6 @@ export default function CallNavbar({
 
         try {
 
-            const formData = new FormData()
-
-            formData.append("user_id", userData.uid)
-            formData.append("public_id", userData.public_id)
-            formData.append("call_id", callId)
-            formData.append("title", title)
-            formData.append("context", context)
-            formData.append("llm", llm.values().next().value)
-            formData.append("role", role.values().next().value)
-            formData.append("auto_interval", autoInterval)
-            formData.append("interval", interval)
-            formData.append("source", source.values().next().value)
-            formData.append("privacy", isPublic ? "public" : "private")
-
-
             const callData = {
                 user_id: userData.uid,
                 public_id: userData.public_id,
@@ -85,6 +70,8 @@ export default function CallNavbar({
                 context,
                 auto_interval: autoInterval,
                 interval,
+                llm: llm.values().next().value,
+                role: role.values().next().value,
                 source: source.values().next().value,
                 privacy: isPublic ? "public" : "private",
             }
@@ -93,8 +80,9 @@ export default function CallNavbar({
                 method: 'POST',
                 headers: {
                 'Authorization': `Bearer ${await handleGetIdToken()}`,
+                "Content-Type": "application/json",
                 },
-                body: formData,
+                body: JSON.stringify(callData),
             })
     
             if (response.ok) {
@@ -285,7 +273,7 @@ export default function CallNavbar({
                     </Switch>      
                     <Button 
                     isLoading={message.type == "callEditing"}
-                    onPress={handleCallUpdate}
+                    onPress={handleEditCall}
                     className={`rounded-xl px-8 py-6 font-medium text-base text-white ${(message.type != "callEditing") ? "bg-gradient-to-br from-sky-500 via-blue-500 to-cyan-500" : "bg-gray-700"}`}
                     disabled={message.type == "callEditing"} // Disable the button if form is not valid or if loading
                     >
