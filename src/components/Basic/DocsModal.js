@@ -50,7 +50,7 @@ export default function DocsModal({ docsModal }){
                         <Button
                             as={Link}
                             isExternal={true}
-                            href={"https://www.youtube.com"}
+                            href={"https://www.linkedin.com/feed/update/urn:li:activity:7303088470183337984"}
                             className={"text-theme px-3 py-2"}
                             startContent={<FaVideo />}
                         >
