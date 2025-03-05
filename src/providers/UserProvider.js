@@ -395,6 +395,7 @@ export const UserProvider = ({ children }) => {
                 message, 
                 setMessage,
                 user,
+                setUser,
                 userData,
                 setUserData,
                 storeUserData,
