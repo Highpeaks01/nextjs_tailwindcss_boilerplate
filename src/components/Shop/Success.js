@@ -18,19 +18,14 @@ export default function Success({}) {
     // Fetch session_id from URL query params
     const fetchSession = async () => {
 
-      console.log(searchParams.toString());
-
       const session_id = searchParams.get('session_id');
 
       if (!session_id) return;
 
-      console.log("session id:", session_id);
 
       // Fetch session from backend
-      const response = await fetch(`${ClientConfig.sessions_get}${session_id}`);
+      const response = await fetch(`${ClientConfig.subs_get}${session_id}`);
       const sessionData = await response.json();
-
-      console.log('Subscription successful', sessionData);
 
       return await getUserData(userData?.uid, userData?.email);
 

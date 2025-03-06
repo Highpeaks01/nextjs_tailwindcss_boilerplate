@@ -20,8 +20,6 @@ export default function Checkout ({ product }) {
 
     try {
 
-      console.log(product)
-
       // Send a request to your backend to create the checkout session
       const response = await fetch(ClientConfig.subs_add, {
           method: "POST",
