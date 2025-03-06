@@ -148,11 +148,11 @@ export default function CallsList({}){
 
         <div className="flex flex-col w-full p-8">
             <div className="flex flex-col space-y-4 w-full items-center text-center justify-center">
-                <h1 className="font-bold text-2xl">Your Calls</h1>
-                <h2 className="font-semibold text-xl">Calls are shareable containers to organize your transcriptions and hints</h2>
+                <h1 className="font-bold text-2xl">Your Hint Boxes</h1>
+                <h2 className="font-semibold text-xl">Hints boxes are containers to organize and share your transcriptions and hints</h2>
                 <h3 className="flex flex-col items-start font-normal text-lg">
-                    <p>1. Add a new call and start recording your device audio</p>
-                    <p>2. Split your screen between the call tab and this one</p>
+                    <p>1. Add a new box and start recording your device audio</p>
+                    <p>2. Split your screen between the call tab and the box tab</p>
                     <div className="flex gap-1">
                         <p>3.</p>
                         <p className="font-bold text-sky-500">{ClientConfig.appName}</p> 
@@ -232,13 +232,13 @@ export default function CallsList({}){
                                 className="px-4 py-2 bg-gradient-to-br from-cyan-500 via-blue-500 to-sky-500"
                                 href={`/calls/${call.id}`} 
                             >
-                                Open Call
+                                Open Box
                             </Button>
                             </CardFooter>
                         </Card>
                     ))) : (
                         <div className="flex flex-col items-center gap-4">
-                            <p className="text-theme italic font-light text-sm">You have no calls, create you first one!</p>
+                            <p className="text-theme italic font-light text-sm">You have no boxes, create you first one!</p>
                         </div>
                     )}
                     </>
