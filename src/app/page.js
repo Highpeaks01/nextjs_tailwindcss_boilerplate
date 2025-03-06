@@ -1,6 +1,7 @@
 "use client"
 
 
+import Head from "next/head";
 import CallsList from "../components/Calls/CallsList"
 
 
