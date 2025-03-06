@@ -340,23 +340,24 @@ export const UserProvider = ({ children }) => {
             const user = userCredential?.user
 
             /* ph: auth */
-            posthog.capture('auth', {
+            /*posthog.capture('auth', {
                 type: "google",
                 action: "login",
-            })
+            })*/
     
-            const response = await fetch(ClientConfig.users_create, {
+            const response = await fetch(ClientConfig.users_add, {
                 method: "POST",
                 headers: {
                     'Authorization': `Bearer ${await handleGetIdToken()}`,
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ 
-                    user_id: user.uid 
+                    user_id: user.uid,
+                    email: user.email, 
                 }),
             })
 
-            getUserData(user.uid, user.email)
+            await getUserData(user.uid, user.email)
 
             if(response.ok) {
                 setMessage({type:"loginMessage", msg:"Login..."})
