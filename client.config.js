@@ -26,7 +26,7 @@ const ClientConfig = {
     calls_delete: "https://backend.callvize.com/api/v1/calls/delete",
     calls_duplicate: "https://backend.callvize.com/api/v1/calls/duplicate",
 
-    sessions_get: "https://backend.callvize.com/api/v1/subs/get/",
+    subs_add: "https://backend.callvize.com/api/v1/subs/add/",
 
     //Misc
     motivationalSamples: [

@@ -5,11 +5,27 @@ import Navbar from "../components/Home/NavBar";
 import Footer from "../components/Basic/Footer";
 
 export const metadata = {
-  title: "Your Website Title",
-  icons: {
-    icon: "/favicon.gif",
+  title: "Callvize – AI-Powered Web Call Assistant",
+  description: "Callvize provides real-time AI-generated prompts during web calls for sales, mentorship, and engineering conversations.",
+  keywords: "AI assistant, web calls, real-time prompts, sales AI, mentoring AI, communication AI",
+  authors: [{ name: "Callvize" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Callvize – AI-Powered Web Call Assistant",
+    description: "Enhance your web calls with AI-driven real-time responses.",
+    url: "https://app.callvize.com",
+    siteName: "Callvize",
+    images: [{ url: "https://github.com/Highpeaks01/callvize_app_data_00/raw/main/logo.png", width: 600, height: 150 }],
+    type: "website",
+  },
+  linkedin: {
+    card: "summary_large_image",
+    title: "Callvize – AI-Powered Web Call Assistant",
+    description: "AI-driven support for your web calls with real-time suggestions.",
+    images: ["https://github.com/Highpeaks01/callvize_app_data_00/raw/main/logo.png"],
   },
 };
+
 
 export default function RootLayout({ children }) {
 
