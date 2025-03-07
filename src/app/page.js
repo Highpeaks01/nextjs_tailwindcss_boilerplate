@@ -12,8 +12,8 @@ export default function Home() {
     "@type": "SoftwareApplication",
     "name": "Callvize",
     "description": "AI-powered real-time assistant for web calls, helping salespeople, mentors, and engineers with prompt replies.",
-    "url": "https://yourdomain.com",
-    "image": "https://yourdomain.com/og-image.jpg",
+    "url": "https://app.callvize.com",
+    "image": "https://github.com/Highpeaks01/callvize_app_data_00/raw/main/logo.png",
     "author": {
       "@type": "Organization",
       "name": "Callvize"
