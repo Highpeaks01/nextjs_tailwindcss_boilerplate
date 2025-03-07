@@ -62,13 +62,14 @@ export default function AuthModal ({}) {
                         variant={"underlined"}
                         aria-label="Tabs form"
                         radius={"sm"}
+                        scrollBehavior={"inside"}
                         selectedKey={selectedTab}
                         onSelectionChange={setSelectedTab}
                     >
                         <Tab 
                             key="login" 
                             title={
-                                <div className={`${selectedTab == "login" ? "text-sky-500" : "text-theme"} flex text-xl items-center space-x-2`}>
+                                <div className={`${selectedTab == "login" ? "text-sky-500" : "text-theme"} flex text-xl items-center`}>
                                 <span>Login</span>
                                 </div>
                             }
@@ -78,7 +79,7 @@ export default function AuthModal ({}) {
                         <Tab 
                             key="sign-up" 
                             title={
-                                <div className={`${selectedTab == "sign-up" ? "text-sky-500" : "text-theme"} flex text-xl items-center space-x-2`}>
+                                <div className={`${selectedTab == "sign-up" ? "text-sky-500" : "text-theme"} flex text-xl items-center`}>
                                 <span>Sign Up</span>
                                 </div>
                             }

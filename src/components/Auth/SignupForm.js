@@ -160,9 +160,6 @@ export default function SignupForm ({}) {
 
     const tempErrors = []
 
-    if (!minLengthRegex.test(password)) {
-      tempErrors.push("Password must be at least 8 characters long.")
-    }
     if (!uppercaseRegex.test(password)) {
       tempErrors.push("Password must contain at least one uppercase letter.")
     }
@@ -174,6 +171,9 @@ export default function SignupForm ({}) {
     }
     if (!specialCharRegex.test(password)) {
       tempErrors.push("Password must contain at least one special character.")
+    }
+    if (!minLengthRegex.test(password)) {
+      tempErrors.push("Password must be at least 8 characters long.")
     }
 
     setPasswordErrors(tempErrors)
@@ -196,7 +196,7 @@ export default function SignupForm ({}) {
   return (
     <>
       <div className="w-full">
-          <div className="flex flex-col gap-4 w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
+          <div className="flex flex-col gap-2 w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
             <Input 
             variant={"faded"}
             isRequired
@@ -208,7 +208,7 @@ export default function SignupForm ({}) {
             onValueChange={setSignupEmail}
             isInvalid={message.type == "signupEmailError"}
             errorMessage={message.type == "signupEmailError" && message.msg}
-            size={"lg"}
+            size={"md"}
             className={"text-sky-500 bg-theme"}
             />
         
@@ -230,7 +230,7 @@ export default function SignupForm ({}) {
             onChange={(e) => handleSignupPasswordChange(e)}
             isInvalid={message.type == "signupPasswordError"}
             errorMessage={message.type == "signupPasswordError" && message.msg} 
-            size={"lg"}
+            size={"md"}
             className={"text-sky-500 bg-theme"}
             />
 
@@ -239,12 +239,12 @@ export default function SignupForm ({}) {
             label="Company" 
             value={company}
             onValueChange={setCompany}
-            size={"lg"}
+            size={"md"}
             className={"text-sky-500 bg-theme"}
             />
 
             <Select
-            className="text-sky-500 py-2"
+            className="text-sky-500"
             label="Role"
             placeholder="Select a role"
             selectedKeys={role}
@@ -258,7 +258,7 @@ export default function SignupForm ({}) {
             </Select>
 
             <Select
-            className="text-sky-500 py-2"
+            className="text-sky-500"
             label="From"
             placeholder="How did you hear about us?"
             selectedKeys={from}
@@ -271,7 +271,7 @@ export default function SignupForm ({}) {
               ))}
             </Select>
 
-          <div className={"mt-4 mb-10 flex w-full items-center justify-end pr-4"}>
+          <div className={"flex w-full items-center justify-end pr-4"}>
             <Checkbox 
               size='sm' 
               defaultSelected
@@ -283,20 +283,18 @@ export default function SignupForm ({}) {
             </Checkbox>
           </div>
 
-          <div className="h-16 flex content-start justify-start">
+          <div className="flex content-start justify-start">
             {passwordErrors.length > 0 && (
               <div className="flex flex-col">
-                {passwordErrors.map((error, index) => (
-                  <p key={index} className="text-rose-500 text-xs italic">
-                    @{error}
+                  <p className="text-rose-500 text-xs italic">
+                    @{passwordErrors[0]}
                   </p>
-                ))}
               </div>
             )}
           </div>
 
-          <div className={"w-full space-y-4 justify-center"}>
-            <div className="flex text-center justify-center h-5">
+          <div className={"flex flex-col w-full gap-2 justify-center"}>
+            <div className="flex text-center justify-center h-4">
               {message.type == "signupMessage" && (
                 <p className="md:text-sm text-base text-blue-400 font-medium">{message.msg}</p>
               )}
@@ -317,7 +315,7 @@ export default function SignupForm ({}) {
               onPress={(e) => handleGoogleLogin()} 
               startContent={<FcGoogle size={28} />}
               className={`w-full px-4 py-6 text-base md:text-base border border-default-400 bg-white text-theme font-medium flex items-center align-center text-center justify-center rounded-xl`} >
-                  Sign up with Google
+                Sign up with Google
             </Button>
           </div>
         </div>
