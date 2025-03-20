@@ -1,4 +1,3 @@
-import ClientConfig from "@/components/client.config";
 import {
     Modal,
     ModalContent,
@@ -17,6 +16,7 @@ import { useUser } from "../../providers/UserProvider";
 import { FaLock, FaLockOpen } from "react-icons/fa";
 import DragDropUploader from "./DragDropUploader";
 import { ContainerWithChildren } from "postcss/lib/container";
+import ClientConfig from "../../../client.config";
   
   export default function NewCallModal({ newCallModal }) {
 

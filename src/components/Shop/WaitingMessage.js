@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react'
 
 //ClientConfig
+import ClientConfig from '../../../client.config'
 
 //NextUI
 import { Button } from "@heroui/react"
 
 //ShopProvider
 import { BsStars } from 'react-icons/bs'
-import ClientConfig from '@/components/client.config'
 import { useShop } from '../../providers/ShopProvider'
 
 export default function WaitingMessageGoPremium ({ userData }) {
@@ -19,7 +19,7 @@ export default function WaitingMessageGoPremium ({ userData }) {
   const [timeRemaining, setTimeRemaining] = useState(null) // State for countdown
 
   // Fetch server time on mount
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchServerTime = async () => {
       try {
         const response = await fetch(ClientConfig.server_info)
@@ -30,7 +30,7 @@ export default function WaitingMessageGoPremium ({ userData }) {
       }
     }
     fetchServerTime()
-  }, [])*/
+  }, [])
 
   // Update countdown every second if there is time remaining
   useEffect(() => {

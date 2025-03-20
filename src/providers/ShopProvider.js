@@ -6,7 +6,7 @@ import { createContext, useContext, useEffect, useState } from "react"
 import ShopModal from "../components/Shop/ShopModal"
 import { GoPremiumWithCloseModal } from "../components/Shop/GoPremiumWithCloseModal"
 import { GoPremiumWithGoBackModal } from "../components/Shop/GoPremiumWithGoBackModal"
-import ClientConfig from "@/components/client.config"
+import ClientConfig from "../../client.config"
 
 
 export const ShopContext = createContext(null)

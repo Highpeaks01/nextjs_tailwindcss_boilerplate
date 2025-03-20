@@ -1,14 +1,14 @@
 import { useUser } from "../../providers/UserProvider"
-import ClientConfig from "@/components/client.config"
 import { Button, Card, CardBody, CardFooter, CardHeader, Link, useDisclosure } from "@heroui/react"
 import { useEffect, useRef, useState } from "react"
 import { FaBook, FaCopy, FaPlus, FaTrash } from "react-icons/fa"
-import NewCallModal from "./NewCallModal"
-import CallsFilter from "./CallsFilter"
+import NewCallModal from "./ModalNew"
+import CallsFilter from "./Filter"
 import { formatTimestamp } from "../../utils/utils"
+import ClientConfig from "../../../client.config"
 
 
-export default function CallsList({}){
+export default function List({}){
 
     const { user, userData, authModal, message, setMessage, handleGetIdToken } = useUser()
 

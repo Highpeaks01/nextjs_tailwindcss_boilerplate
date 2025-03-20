@@ -1,6 +1,6 @@
 import ClientConfig from "@/components/client.config";
 import CallNavbar from "./CallNavbar";
-import CallMessages from "./CallMessages";
+import CallMessages from "./SubItems";
 import GetCallAudio from "./GetCallAudio";
 import { useEffect, useRef, useState } from "react";
 import {

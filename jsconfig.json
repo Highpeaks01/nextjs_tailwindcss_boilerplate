@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "paths": {
-      "@/components/*": ["./*"]
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/*": ["./*"]  // Added this line to access the root folder
     }
   }
 }

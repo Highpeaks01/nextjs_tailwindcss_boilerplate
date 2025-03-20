@@ -4,7 +4,7 @@ import { useState } from "react";
 import HomeFilters from "./HomeFilters";
 import HomeGallery from "./HomeGallery";
 import HomeMenu from "./HomeMenu";
-import CaptureMeetAudio from "../Calls/_CaptureCallAudio";
+import CaptureMeetAudio from "../items/_CaptureCallAudio";
 
 
 export default function HomePage() {

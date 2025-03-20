@@ -12,8 +12,8 @@ import {
   // Shop Context
 import { useUser } from "../../providers/UserProvider"
 import { useShop } from "../../providers/ShopProvider"
-import ClientConfig from "@/components/client.config"
 import Checkout from "./Checkout"
+import ClientConfig from "../../../client.config"
   
   
   export default function ShopModal ({}) {

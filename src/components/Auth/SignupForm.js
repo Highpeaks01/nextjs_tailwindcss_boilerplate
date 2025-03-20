@@ -20,7 +20,7 @@ import { IoEye, IoEyeOff } from "react-icons/io5"
 //ClientConfig
 import { auth } from "../../lib/firebase"
 import { useUser } from "../../providers/UserProvider"
-import ClientConfig from "@/components/client.config"
+import ClientConfig from "../../../client.config"
 
 export const roles = [
   {key: "developer", label: "Developer"},

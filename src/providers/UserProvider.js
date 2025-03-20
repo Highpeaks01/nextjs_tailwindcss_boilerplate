@@ -1,7 +1,6 @@
 "use client"
 
 
-import ClientConfig from "@/components/client.config"
 
 //Firebase
 import { auth } from "../lib/firebase"
@@ -20,6 +19,7 @@ import { useRouter } from "next/navigation"
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
 import { useDisclosure } from "@heroui/react"
 import AuthModal from "../components/Auth/AuthModal"
+import ClientConfig from "../../client.config"
 
 
 export const UserContext = createContext(null)

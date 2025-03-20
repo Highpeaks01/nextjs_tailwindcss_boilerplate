@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useRouter } from 'next/navigation';
-import ClientConfig from "@/components/client.config";
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } from "@heroui/react";
 import { useUser } from "../../providers/UserProvider";
+import ClientConfig from "../../../client.config";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.

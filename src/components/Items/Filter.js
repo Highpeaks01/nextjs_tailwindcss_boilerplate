@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { DatePicker, Textarea, Select, SelectItem, Input } from "@heroui/react";
-import CallLayout from "../../app/calls/[callId]/layout";
 
 
 export default function CallsFilter ({ calls, setFilteredCalls }) {

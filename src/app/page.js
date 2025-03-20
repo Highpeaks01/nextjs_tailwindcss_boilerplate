@@ -2,7 +2,7 @@
 
 
 import Head from "next/head";
-import CallsList from "../components/Calls/CallsList"
+import List from "../components/Items/List"
 
 
 export default function Home() {
@@ -30,17 +30,17 @@ export default function Home() {
   return (
     <>
       <Head>
-          <title>Callvize – AI-Powered Web Call Assistant</title>
-          <meta name="description" content="Callvize is an AI mentalist that provides real-time prompt replies during web calls. When you need a mentor, salesman or engineer ready to help you." />
-          <meta name="keywords" content="AI assistant, web calls, real-time prompts, sales AI, mentoring AI, call support, communication AI." />
-          <meta name="author" content="Callvize" />
+          <title>sample title for boilerplate</title>
+          <meta name="description" content="sample description for boilerplate" />
+          <meta name="keywords" content="keyword 1, keyword2, keyword3" />
+          <meta name="author" content="author" />
           <meta name="robots" content="index, follow" />
           
           {/* Open Graph (OG) Meta Tags for Social Sharing */}
-          <meta property="og:title" content="Callvize – AI-Powered Web Call Assistant" />
-          <meta property="og:description" content="Enhance your web calls with AI-driven real-time responses. Perfect for sales, mentoring, and technical discussions." />
+          <meta property="og:title" content="placeholder" />
+          <meta property="og:description" content="placeholder" />
           <meta property="og:image" content="https://github.com/Highpeaks01/callvize_app_data_00/raw/main/logo.png" />
-          <meta property="og:url" content="https://app.callvize.com" />
+          <meta property="og:url" content="placeholder" />
           <meta property="og:type" content="website" />
 
           {/* Favicon */}
@@ -48,7 +48,7 @@ export default function Home() {
       </Head>
       <div className="flex w-full justify-center h-screen">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <CallsList />
+        <List />
       </div>
     </>
   )

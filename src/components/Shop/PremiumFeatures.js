@@ -1,7 +1,7 @@
-import ClientConfig from '@/components/client.config'
 import { FaMemory } from 'react-icons/fa'
 import { IoSparklesSharp, IoLockOpen, IoCamera, IoColorPaletteOutline, IoPeopleCircleOutline } from "react-icons/io5"
 import { RiAdvertisementFill, RiSettings3Fill } from 'react-icons/ri'
+import ClientConfig from '../../../client.config'
 
 
 const featuresData = [

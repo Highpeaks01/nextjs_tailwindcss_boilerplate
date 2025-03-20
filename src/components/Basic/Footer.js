@@ -1,6 +1,5 @@
 import { Button, Link } from "@heroui/react"
-import Socials from "../_Landing/Socials"
-import ClientConfig from "@/components/client.config"
+import ClientConfig from "../../../client.config"
 
 export default function Footer({}) {
 
