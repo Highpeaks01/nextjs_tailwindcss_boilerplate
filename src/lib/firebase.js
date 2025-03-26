@@ -3,15 +3,7 @@ import { getAuth } from "firebase/auth"
 import { getMessaging, isSupported } from "firebase/messaging"
 import { getAnalytics } from "firebase/analytics";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBa3Dwkqy0ChAhBitdFdgEORI8MhlJa75s",
-  authDomain: "project0218745.firebaseapp.com",
-  projectId: "project0218745",
-  storageBucket: "project0218745.firebasestorage.app",
-  messagingSenderId: "792358622760",
-  appId: "1:792358622760:web:a85b4d162c45277254c71d",
-  measurementId: "G-GXNGZVK5QM"
-};
+const firebaseConfig = {};
 
 // Initialize Firebase only once
 const app = initializeApp(firebaseConfig);
