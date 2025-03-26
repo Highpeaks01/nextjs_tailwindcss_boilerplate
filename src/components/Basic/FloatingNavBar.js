@@ -4,14 +4,14 @@
 import { FaQuestionCircle, FaUnlockAlt } from "react-icons/fa";
 import { useUser } from "../../providers/UserProvider";
 import ButtonPrimitive from "../Primitives/ButtonPrimitive";
-import Profile from "../Basic/Profile";
+import Profile from "./Profile";
 import Credits from "../Shop/Credits";
-import Logo from "../Basic/Logo";
+import Logo from "./Logo";
 import { Button, Link, useDisclosure } from "@heroui/react";
-import DocsModal from "../Basic/DocsModal";
+import DocsModal from "./DocsModal";
 
 
-export default function Navbar({}){
+export default function FloatingNavbar({}){
 
     const { user, authModal } = useUser()
     const docsModal = useDisclosure()

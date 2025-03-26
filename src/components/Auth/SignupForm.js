@@ -194,132 +194,128 @@ export default function SignupForm ({}) {
 
 
   return (
-    <>
-      <div className="w-full">
-          <div className="flex flex-col gap-2 w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
-            <Input 
-            variant={"faded"}
-            isRequired
-            type="email" 
-            isClearable={true}
-            onClear={() => setSignupEmail("")}
-            label="Email" 
-            value={signupEmail}
-            onValueChange={setSignupEmail}
-            isInvalid={message.type == "signupEmailError"}
-            errorMessage={message.type == "signupEmailError" && message.msg}
-            size={"md"}
-            className={"text-sky-500 bg-theme"}
-            />
-        
-            <Input
-            variant={"faded"}
-            isRequired
-            label="Password"
-            endContent={
-              <button type="button" onClick={toggleVisibility}>
-                {isVisible ? (
-                  <IoEye className="text-xl pointer-events-none" />
-                ) : (
-                  <IoEyeOff className="text-xl pointer-events-none" />
-                )}
-              </button>
-            }
-            type={isVisible ? "text" : "password"}
-            value={signupPassword}
-            onChange={(e) => handleSignupPasswordChange(e)}
-            isInvalid={message.type == "signupPasswordError"}
-            errorMessage={message.type == "signupPasswordError" && message.msg} 
-            size={"md"}
-            className={"text-sky-500 bg-theme"}
-            />
+    <div className="flex flex-col gap-2 w-96 h-auto items-center content-center align-center justify-center overflow-hidden">
+      <Input 
+      variant={"faded"}
+      isRequired
+      type="email" 
+      isClearable={true}
+      onClear={() => setSignupEmail("")}
+      label="Email" 
+      value={signupEmail}
+      onValueChange={setSignupEmail}
+      isInvalid={message.type == "signupEmailError"}
+      errorMessage={message.type == "signupEmailError" && message.msg}
+      size={"md"}
+      className={"text-sky-500 bg-theme"}
+      />
+  
+      <Input
+      variant={"faded"}
+      isRequired
+      label="Password"
+      endContent={
+        <button type="button" onClick={toggleVisibility}>
+          {isVisible ? (
+            <IoEye className="text-xl pointer-events-none" />
+          ) : (
+            <IoEyeOff className="text-xl pointer-events-none" />
+          )}
+        </button>
+      }
+      type={isVisible ? "text" : "password"}
+      value={signupPassword}
+      onChange={(e) => handleSignupPasswordChange(e)}
+      isInvalid={message.type == "signupPasswordError"}
+      errorMessage={message.type == "signupPasswordError" && message.msg} 
+      size={"md"}
+      className={"text-sky-500 bg-theme"}
+      />
 
-            <Input 
-            variant={"faded"}
-            label="Company" 
-            value={company}
-            onValueChange={setCompany}
-            size={"md"}
-            className={"text-sky-500 bg-theme"}
-            />
+      <Input 
+      variant={"faded"}
+      label="Company" 
+      value={company}
+      onValueChange={setCompany}
+      size={"md"}
+      className={"text-sky-500 bg-theme"}
+      />
 
-            <Select
-            className="text-sky-500"
-            label="Role"
-            placeholder="Select a role"
-            selectedKeys={role}
-            variant="faded"
-            isRequired
-            onSelectionChange={setRole}
-            >
-              {roles.map((role) => (
-                <SelectItem key={role.key}>{role.label}</SelectItem>
-              ))}
-            </Select>
+      <Select
+      className="text-sky-500"
+      label="Role"
+      placeholder="Select a role"
+      selectedKeys={role}
+      variant="faded"
+      isRequired
+      onSelectionChange={setRole}
+      >
+        {roles.map((role) => (
+          <SelectItem key={role.key}>{role.label}</SelectItem>
+        ))}
+      </Select>
 
-            <Select
-            className="text-sky-500"
-            label="From"
-            placeholder="How did you hear about us?"
-            selectedKeys={from}
-            variant="faded"
-            isRequired
-            onSelectionChange={setFrom}
-            >
-              {froms.map((from) => (
-                <SelectItem key={from.key}>{from.label}</SelectItem>
-              ))}
-            </Select>
+      <Select
+      className="text-sky-500"
+      label="From"
+      placeholder="How did you hear about us?"
+      selectedKeys={from}
+      variant="faded"
+      isRequired
+      onSelectionChange={setFrom}
+      >
+        {froms.map((from) => (
+          <SelectItem key={from.key}>{from.label}</SelectItem>
+        ))}
+      </Select>
 
-          <div className={"flex w-full items-center justify-end pr-4"}>
-            <Checkbox 
-              size='sm' 
-              defaultSelected
-              className={"bg-theme text-theme"}
-              isRequired
-              isDisabled
-            >
-              <p className="bg-theme text-theme">I agree to the terms of service</p>
-            </Checkbox>
-          </div>
+    <div className={"flex w-full items-center justify-end pr-4"}>
+      <Checkbox 
+        size='sm' 
+        defaultSelected
+        className={"bg-theme text-theme"}
+        isRequired
+        isDisabled
+      >
+        <p className="bg-theme text-theme">I agree to the terms of service</p>
+      </Checkbox>
+    </div>
 
-          <div className="flex content-start justify-start">
-            {passwordErrors.length > 0 && (
-              <div className="flex flex-col">
-                  <p className="text-rose-500 text-xs italic">
-                    @{passwordErrors[0]}
-                  </p>
-              </div>
-            )}
-          </div>
-
-          <div className={"flex flex-col w-full gap-2 justify-center"}>
-            <div className="flex text-center justify-center h-4">
-              {message.type == "signupMessage" && (
-                <p className="md:text-sm text-base text-blue-400 font-medium">{message.msg}</p>
-              )}
-            </div>
-            <Button      
-              variant="solid"                                    
-              isLoading={(message.type == "isSignupLoading")}
-              disabled={message.type == "signupLoading"} 
-              onPress={() => handleSignup()}   
-              className={`w-full px-4 py-6 text-base md:text-base rounded-xl bg-gradient-to-br from-cyan-300 via-blue-500 to-sky-500 text-theme font-medium`}
-            >
-                Signup
-            </Button>
-            <Button
-              variant="solid"
-              isLoading={(message.type == "googleLoading")}
-              disabled={(message.type == "signupLoading")} 
-              onPress={(e) => handleGoogleLogin()} 
-              startContent={<FcGoogle size={28} />}
-              className={`w-full px-4 py-6 text-base md:text-base border border-default-400 bg-white text-theme font-medium flex items-center align-center text-center justify-center rounded-xl`} >
-                Sign up with Google
-            </Button>
-          </div>
+    <div className="flex content-start justify-start">
+      {passwordErrors.length > 0 && (
+        <div className="flex flex-col">
+            <p className="text-rose-500 text-xs italic">
+              @{passwordErrors[0]}
+            </p>
         </div>
-      </div>    
-    </>
+      )}
+    </div>
+
+    <div className={"flex flex-col w-full gap-2 justify-center"}>
+      <div className="flex text-center justify-center h-4">
+        {message.type == "signupMessage" && (
+          <p className="md:text-sm text-base text-blue-400 font-medium">{message.msg}</p>
+        )}
+      </div>
+      <Button      
+        variant="solid"                                    
+        isLoading={(message.type == "isSignupLoading")}
+        disabled={message.type == "signupLoading"} 
+        onPress={() => handleSignup()}   
+        className={`w-full px-4 py-6 text-base md:text-base rounded-xl bg-gradient-to-br from-cyan-300 via-blue-500 to-sky-500 text-theme font-medium`}
+      >
+          Signup
+      </Button>
+      <Button
+        variant="solid"
+        isLoading={(message.type == "googleLoading")}
+        disabled={(message.type == "signupLoading")} 
+        onPress={(e) => handleGoogleLogin()} 
+        startContent={<FcGoogle size={28} />}
+        className={`w-full px-4 py-6 text-base md:text-base border border-default-400 bg-white text-theme font-medium flex items-center align-center text-center justify-center rounded-xl`} >
+          Sign up with Google
+      </Button>
+    </div>
+  </div>
   )
 }

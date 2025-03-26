@@ -1,8 +1,10 @@
 import "../styles/globals.css";
 import Providers from "../providers/Providers";
 import ThemeSwitcher from "../components/Basic/ThemeSwitcher";
-import Navbar from "../components/Home/NavBar";
 import Footer from "../components/Basic/Footer";
+import TopNavbar from "@/components/Basic/TopNavbar";
+import MarqueeBanner from "@/components/Landing/MarqueeBanner";
+import FeedbackDrawer from "@/components/Basic/FeedbackDrawer";
 
 export const metadata = {
   title: "Callvize – AI-Powered Web Call Assistant",
@@ -35,17 +37,22 @@ export default function RootLayout({ children }) {
         <Providers>
           <div className="relative">
             {/* ✅ Add LanguageSwitcher in the top-right */}
-            <div className="absolute z-10 top-2 right-2">
+            <div className="absolute z-20 top-2 right-2">
               <ThemeSwitcher />
             </div>
           </div>
 
+          <FeedbackDrawer />
+
           {/* ✅ Use a flex container for sidebar + main content */}
           <main className="flex flex-col justify-center min-h-screen">
-            <div className="flex fixed top-0 left-0 z-10 mt-8 items-center justify-center w-full">
-              <Navbar />
-            </div>
-            <div className="flex-1 pt-32 overflow-auto">
+                    {/* Show the banner only on the homepage */}
+            <MarqueeBanner />
+            {/*<div className="flex fixed top-0 left-0 z-10 mt-8 items-center justify-center w-full">
+              <FloatingNavbar />
+            </div>*/}
+            <TopNavbar />
+            <div className="flex-1 overflow-auto">
               {children}
             </div>
           </main>

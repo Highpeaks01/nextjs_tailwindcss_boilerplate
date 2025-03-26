@@ -3,20 +3,24 @@
 
 import Head from "next/head";
 import List from "../components/Items/List"
+import Hero from "@/components/Landing/Hero";
+import FeatureSections from "@/components/Landing/Features";
+import Testimonials from "@/components/Landing/Testimonials";
+import FAQSection from "@/components/Landing/Faqs";
 
 
 export default function Home() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Callvize",
-    "description": "AI-powered real-time assistant for web calls, helping salespeople, mentors, and engineers with prompt replies.",
-    "url": "https://app.callvize.com",
+    "@type": "sample_name",
+    "name": "sample_name",
+    "description": "call prospects while you sleep and close more deals",
+    "url": "https://app.sample.com",
     "image": "https://github.com/Highpeaks01/callvize_app_data_00/raw/main/logo.png",
     "author": {
       "@type": "Organization",
-      "name": "Callvize"
+      "name": "sample_name"
     },
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
@@ -48,7 +52,13 @@ export default function Home() {
       </Head>
       <div className="flex w-full justify-center h-screen">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <List />
+        <Hero />
+        <div id="benefits"></div>
+        <FeatureSections />
+        <div id="reviews"></div>
+        <Testimonials />
+        <div id="faqs"></div>
+        <FAQSection />
       </div>
     </>
   )
